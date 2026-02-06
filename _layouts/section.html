@@ -9,7 +9,76 @@ layout: default
     {% endif %}
     <h3>{{ page.title }}</h3>
   </div>
+
+  {% if page.intro %}
   <div class="section-body">
-    {{ content }}
+    <p>{{ page.intro }}</p>
   </div>
+  {% endif %}
+
+  {% if page.cards %}
+  <div class="grid">
+    {% for card in page.cards %}
+    <article class="tile">
+      <h4>{{ card.title }}</h4>
+      <p>{{ card.body }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.fleet %}
+  <div class="fleet">
+    {% for item in page.fleet %}
+    <div>
+      <h4>{{ item.title }}</h4>
+      <p>{{ item.body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.pricing %}
+  <div class="pricing">
+    {% for plan in page.pricing %}
+    <div class="price-card{% if plan.featured %} featured{% endif %}">
+      <h4>{{ plan.name }}</h4>
+      <p class="price">{{ plan.price }} <span>{{ plan.term }}</span></p>
+      <ul>
+        {% for item in plan.features %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      {% if plan.cta %}
+      <a class="btn{% if plan.ghost %} ghost{% endif %}" href="{{ plan.cta_url | relative_url }}">{{ plan.cta }}</a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.timeline %}
+  <div class="timeline">
+    {% for event in page.timeline %}
+    <div class="timeline-item">
+      <p class="timeline-date">{{ event.date }}</p>
+      <p class="timeline-title">{{ event.title }}</p>
+      <p>{{ event.body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.cta %}
+  <div class="cta">
+    <div>
+      <p>{{ page.cta.body }}</p>
+    </div>
+    <div class="cta-actions">
+      {% for action in page.cta.actions %}
+      <a class="btn{% if action.ghost %} ghost{% endif %}" href="{{ action.url }}">{{ action.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 </section>

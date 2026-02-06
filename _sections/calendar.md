@@ -2,22 +2,15 @@
 title: Signature events built for community.
 eyebrow: Spring Calendar
 order: 4
+intro: "Join the signature gatherings that keep the club connected on and off the water."
+timeline:
+  - date: April 5
+    title: Opening Regatta + Dockside BBQ
+    body: Family-friendly racing and a sunset toast.
+  - date: May 2-4
+    title: Channel Islands Weekend Flotilla
+    body: Overnight sailing with navigation coaching.
+  - date: June 14
+    title: Women's Helm Intensive
+    body: Advanced boat handling led by visiting captains.
 ---
-
-<div class="timeline">
-  <div class="timeline-item">
-    <p class="timeline-date">April 5</p>
-    <p class="timeline-title">Opening Regatta + Dockside BBQ</p>
-    <p>Family-friendly racing and a sunset toast.</p>
-  </div>
-  <div class="timeline-item">
-    <p class="timeline-date">May 2-4</p>
-    <p class="timeline-title">Channel Islands Weekend Flotilla</p>
-    <p>Overnight sailing with navigation coaching.</p>
-  </div>
-  <div class="timeline-item">
-    <p class="timeline-date">June 14</p>
-    <p class="timeline-title">Women's Helm Intensive</p>
-    <p>Advanced boat handling led by visiting captains.</p>
-  </div>
-</div>
