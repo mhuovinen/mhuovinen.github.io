@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<section class="section section-alt">
+  <div class="section-header">
+    {% if page.eyebrow %}
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    {% endif %}
+    <h3>{{ page.title }}</h3>
+  </div>
+  <div class="section-body">
+    {{ content }}
+  </div>
+</section>

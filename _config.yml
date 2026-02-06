@@ -7,3 +7,15 @@ plugins: []
 
 # GitHub Pages settings
 # If you deploy to a project site, set baseurl: "/your-repo-name"
+
+collections:
+  sections:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: sections
+    values:
+      layout: section

@@ -9,8 +9,8 @@ title: Mariner's Crest Boat Club
     <h2>Where the day begins on still water and ends with stories at the dock.</h2>
     <p>Mariner's Crest is a member-run boat club built for early launches, sunset cruises, and a calendar full of shared adventures. Our marina hosts an expertly maintained fleet, training programs, and a welcoming social community for every skill level.</p>
     <div class="hero-actions">
-      <a class="btn" href="#membership">Apply for Membership</a>
-      <a class="btn ghost" href="#visit">Schedule a Tour</a>
+      <a class="btn" href="{{ "/membership/" | relative_url }}">Apply for Membership</a>
+      <a class="btn ghost" href="{{ "/visit/" | relative_url }}">Schedule a Tour</a>
     </div>
   </div>
   <div class="hero-card">
@@ -24,121 +24,17 @@ title: Mariner's Crest Boat Club
   </div>
 </section>
 
-<section class="section" id="experience">
+{% assign sorted_sections = site.sections | sort: "order" %}
+{% for section in sorted_sections %}
+<section class="section{% if section.eyebrow == "Our Fleet" or section.eyebrow == "Spring Calendar" %} section-alt{% endif %}" id="{{ section.slug | default: section.title | slugify }}">
   <div class="section-header">
-    <p class="eyebrow">The Experience</p>
-    <h3>Designed for relaxed cruising and bold voyages.</h3>
+    {% if section.eyebrow %}
+    <p class="eyebrow">{{ section.eyebrow }}</p>
+    {% endif %}
+    <h3>{{ section.title }}</h3>
   </div>
-  <div class="grid">
-    <article class="tile">
-      <h4>Skipper Training</h4>
-      <p>Structured, hands-on training with certified captains so members can confidently helm both sail and power vessels.</p>
-    </article>
-    <article class="tile">
-      <h4>Member-Owned Fleet</h4>
-      <p>Professionally maintained boats, ready to go with online reservations and dockside support seven days a week.</p>
-    </article>
-    <article class="tile">
-      <h4>Social Calendar</h4>
-      <p>Regattas, weekend flotillas, and dockside dinners that feel effortless to join.</p>
-    </article>
+  <div class="section-body">
+    {{ section.content }}
   </div>
 </section>
-
-<section class="section section-alt" id="fleet">
-  <div class="section-header">
-    <p class="eyebrow">Our Fleet</p>
-    <h3>Every boat is equipped for comfort, clarity, and safety.</h3>
-  </div>
-  <div class="fleet">
-    <div>
-      <h4>Harbor Class</h4>
-      <p>28-32 ft cruisers, ideal for day trips and lesson progression. Easy handling with full electronics.</p>
-    </div>
-    <div>
-      <h4>Bluewater Class</h4>
-      <p>34-40 ft sailing yachts with overnight cabins, galley kitchens, and advanced navigation packages.</p>
-    </div>
-    <div>
-      <h4>Sunset Class</h4>
-      <p>Luxury powerboats for sunset cruises, harbor tours, and hosting small gatherings on the water.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="membership">
-  <div class="section-header">
-    <p class="eyebrow">Membership</p>
-    <h3>A simple path to year-round access.</h3>
-  </div>
-  <div class="pricing">
-    <div class="price-card">
-      <h4>Coastal</h4>
-      <p class="price">$290 <span>/ month</span></p>
-      <ul>
-        <li>Weekday access to Harbor Class</li>
-        <li>Two training sessions included</li>
-        <li>Guest passes each quarter</li>
-      </ul>
-      <a class="btn" href="#visit">Start Coastal</a>
-    </div>
-    <div class="price-card featured">
-      <h4>Navigator</h4>
-      <p class="price">$420 <span>/ month</span></p>
-      <ul>
-        <li>Full fleet access + priority booking</li>
-        <li>Unlimited training refreshers</li>
-        <li>Invitations to member-only regattas</li>
-      </ul>
-      <a class="btn" href="#visit">Apply for Navigator</a>
-    </div>
-    <div class="price-card">
-      <h4>Harbor Social</h4>
-      <p class="price">$140 <span>/ month</span></p>
-      <ul>
-        <li>Dockside events + guest passes</li>
-        <li>Quarterly learn-to-sail workshops</li>
-        <li>Discounted crew spots</li>
-      </ul>
-      <a class="btn ghost" href="#visit">Join Social</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="calendar">
-  <div class="section-header">
-    <p class="eyebrow">Spring Calendar</p>
-    <h3>Signature events built for community.</h3>
-  </div>
-  <div class="timeline">
-    <div class="timeline-item">
-      <p class="timeline-date">April 5</p>
-      <p class="timeline-title">Opening Regatta + Dockside BBQ</p>
-      <p>Family-friendly racing and a sunset toast.</p>
-    </div>
-    <div class="timeline-item">
-      <p class="timeline-date">May 2-4</p>
-      <p class="timeline-title">Channel Islands Weekend Flotilla</p>
-      <p>Overnight sailing with navigation coaching.</p>
-    </div>
-    <div class="timeline-item">
-      <p class="timeline-date">June 14</p>
-      <p class="timeline-title">Women's Helm Intensive</p>
-      <p>Advanced boat handling led by visiting captains.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="visit">
-  <div class="cta">
-    <div>
-      <p class="eyebrow">Plan a Visit</p>
-      <h3>Tour the docks, meet the crew, and see the fleet in action.</h3>
-      <p>We host visits every Saturday and weekday evenings. Bring your questions and we will map the right membership path together.</p>
-    </div>
-    <div class="cta-actions">
-      <a class="btn" href="mailto:hello@marinerscrest.club">Book a Tour</a>
-      <a class="btn ghost" href="mailto:hello@marinerscrest.club">Request a Call</a>
-    </div>
-  </div>
-</section>
+{% endfor %}
