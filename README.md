@@ -1,34 +1,15 @@
-## Testiotsikko
-Test
+# Mariner's Crest Boat Club Theme
 
-### Markdown
+A modern, image-free Jekyll theme tailored for a boat club website. It is compatible with GitHub Pages.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Use on GitHub Pages
 
-```markdown
-Syntax highlighted code block
+1. Copy the contents of this folder into your GitHub repository.
+2. In `/_config.yml`, set `baseurl` to your repo name if you are using a project site (for example: `/my-boat-club`).
+3. Enable GitHub Pages for the repository with the default Jekyll build.
 
-# Header 1
-## Header 2
-### Header 3
+## Customize
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mhuovinen/test/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Update the club name and description in `/_config.yml`.
+- Edit the sections in `/index.html` to change copy, events, and pricing.
+- Adjust colors and typography in `/assets/css/style.scss`.

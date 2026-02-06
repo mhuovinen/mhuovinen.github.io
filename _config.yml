@@ -1,3 +1,9 @@
-theme: jekyll-theme-cayman
-title: test-page
-description: test description
+title: Mariner's Crest Boat Club
+description: A modern Jekyll theme for a community boat club.
+url: ""
+baseurl: ""
+markdown: kramdown
+plugins: []
+
+# GitHub Pages settings
+# If you deploy to a project site, set baseurl: "/your-repo-name"
